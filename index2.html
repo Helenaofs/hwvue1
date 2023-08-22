@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    <div id="app2">
+        <button @click="addElement()">добавить</button>
+        <ul>
+            <li v-for="el in listOfElements">{{ el }}</li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app2',
+            data: {
+                listOfElements: ['элемент списка', 'элемент списка', 'элемент списка'],
+                newElementOfList: 'новый элемент списка'
+            },
+            methods: {
+                addElement(newElementOfList) {
+                    this.listOfElements.push(this.newElementOfList);
+                },
+            },
+        })
+    </script>
+</body>
+</html>
